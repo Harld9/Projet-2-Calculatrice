@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertisseur d'unités</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="/static/logo.png" alt="logo">
+        <a href="/" class="logo-link"></a>
+        </div>
+    </header>
+
+    <div class="menu">
+        <form class="contactform" method="post" action="/celsiustofahrenheit">
+            <h2>Addition</h2>
+            <label>Combien de degrés Celsius voulez vous convertir ?</label>
+            <input type="text" name="nb1" required>
+            <input type="text" name="nb2" required>
+            <button type="submit">Envoyer</button>
+
+            {{if ne .Erreur3 ""}}
+            <div class="erreur">{{.Erreur3}}</div>
+            {{end}}
+
+            {{if .Resultat3}}
+            <div class="resultat">{{.Entree3}} °C équivaut à : {{.Resultat3}} °F </div>
+            {{end}}
+        </form>
+        <div class="menu">
+            <form class="contactform" method="post" action="/celsiustofahrenheit">
+                <h2>Soustraction</h2>
+                <p>Combien de degrés Celsius voulez vous convertir ?</p>
+                <input type="text" name="nb1" required>
+                <input type="text" name="nb2" required>
+                <button type="submit">Envoyer</button>
+
+                {{if ne .Erreur3 ""}}
+                <div class="erreur">{{.Erreur3}}</div>
+                {{end}}
+
+                {{if .Resultat3}}
+                <div class="resultat">{{.Entree3}} °C équivaut à : {{.Resultat3}} °F </div>
+                {{end}}
+            </form>
+            <div class="menu">
+                <form class="contactform" method="post" action="/celsiustofahrenheit">
+                    <h2>Multiplication</h2>
+                    <label>Combien de degrés Celsius voulez vous convertir ?</label>
+                    <input type="text" name="nb1" required>
+                    <input type="text" name="nb2" required>
+                    <button type="submit">Envoyer</button>
+
+                    {{if ne .Erreur3 ""}}
+                    <div class="erreur">{{.Erreur3}}</div>
+                    {{end}}
+
+                    {{if .Resultat3}}
+                    <div class="resultat">{{.Entree3}} °C équivaut à : {{.Resultat3}} °F </div>
+                    {{end}}
+                </form>
+                <div class="menu">
+                    <form class="contactform" method="post" action="/celsiustofahrenheit">
+                        <h2>Division</h2>
+                        <label>Combien de degrés Celsius voulez vous convertir ?</label>
+                        <input type="text" name="nb1" required>
+                        <input type="text" name="nb2" required>
+                        <button type="submit">Envoyer</button>
+
+                        {{if ne .Erreur3 ""}}
+                        <div class="erreur">{{.Erreur3}}</div>
+                        {{end}}
+
+                        {{if .Resultat3}}
+                        <div class="resultat">{{.Entree3}} °C équivaut à : {{.Resultat3}} °F </div>
+                        {{end}}
+                    </form>
+</body>
+
+</html>
