@@ -4,81 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convertisseur d'unités</title>
+    <title>Calculatrice by Harold</title>
     <link rel="stylesheet" href="static/style.css">
 </head>
 
 <body>
     <header>
-        <img class="logo" src="/static/logo.png" alt="logo">
-        <a href="/" class="logo-link"></a>
-        </div>
+        <a href="/"><img class="logo" src="/static/logo.png" alt="logo"></a>
     </header>
 
+    <div class="container1"></div>
+
     <div class="menu">
-        <form class="contactform" method="post" action="/celsiustofahrenheit">
+        <form class="calcul" method="post" action="/addition">
             <h2>Addition</h2>
-            <label>Combien de degrés Celsius voulez vous convertir ?</label>
-            <input type="text" name="nb1" required>
-            <input type="text" name="nb2" required>
-            <button type="submit">Envoyer</button>
+            <p>Additionnez les nombres :</p>
+            <input type="text" name="nb1" required placeholder="Nombre 1">
+            <input type="text" name="nb2" required placeholder="Nombre 2">
+            <button type="submit">Calculer</button>
 
-            {{if ne .Erreur3 ""}}
-            <div class="erreur">{{.Erreur3}}</div>
-            {{end}}
-
-            {{if .Resultat3}}
-            <div class="resultat">{{.Entree3}} °C équivaut à : {{.Resultat3}} °F </div>
-            {{end}}
+            {{if ne .ErreurSom1 ""}}<div class="erreur">{{.ErreurSom1}}</div>{{end}}
+            {{if ne .ErreurSom2 ""}}<div class="erreur">{{.ErreurSom2}}</div>{{end}}
+            {{if .ResSom}}<div class="resultat">{{.EntreeSom1}} + {{.EntreeSom2}} = {{.ResSom}}</div>{{end}}
         </form>
-        <div class="menu">
-            <form class="contactform" method="post" action="/celsiustofahrenheit">
-                <h2>Soustraction</h2>
-                <p>Combien de degrés Celsius voulez vous convertir ?</p>
-                <input type="text" name="nb1" required>
-                <input type="text" name="nb2" required>
-                <button type="submit">Envoyer</button>
+    </div>
 
-                {{if ne .Erreur3 ""}}
-                <div class="erreur">{{.Erreur3}}</div>
-                {{end}}
+    <div class="menu">
+        <form class="calcul" method="post" action="/soustraction">
+            <h2>Soustraction</h2>
+            <p>Soustrayez les nombres :</p>
+            <input type="text" name="nb1" required placeholder="Nombre 1">
+            <input type="text" name="nb2" required placeholder="Nombre 2">
+            <button type="submit">Calculer</button>
 
-                {{if .Resultat3}}
-                <div class="resultat">{{.Entree3}} °C équivaut à : {{.Resultat3}} °F </div>
-                {{end}}
-            </form>
-            <div class="menu">
-                <form class="contactform" method="post" action="/celsiustofahrenheit">
-                    <h2>Multiplication</h2>
-                    <label>Combien de degrés Celsius voulez vous convertir ?</label>
-                    <input type="text" name="nb1" required>
-                    <input type="text" name="nb2" required>
-                    <button type="submit">Envoyer</button>
+            {{if ne .ErreurSou1 ""}}<div class="erreur">{{.ErreurSou1}}</div>{{end}}
+            {{if ne .ErreurSou2 ""}}<div class="erreur">{{.ErreurSou2}}</div>{{end}}
+            {{if .ResSou}}<div class="resultat">{{.EntreeSou1}} - {{.EntreeSou2}} = {{.ResSou}}</div>{{end}}
+        </form>
+    </div>
 
-                    {{if ne .Erreur3 ""}}
-                    <div class="erreur">{{.Erreur3}}</div>
-                    {{end}}
+    <div class="container2"></div>
 
-                    {{if .Resultat3}}
-                    <div class="resultat">{{.Entree3}} °C équivaut à : {{.Resultat3}} °F </div>
-                    {{end}}
-                </form>
-                <div class="menu">
-                    <form class="contactform" method="post" action="/celsiustofahrenheit">
-                        <h2>Division</h2>
-                        <label>Combien de degrés Celsius voulez vous convertir ?</label>
-                        <input type="text" name="nb1" required>
-                        <input type="text" name="nb2" required>
-                        <button type="submit">Envoyer</button>
+    <div class="menu">
+        <form class="calcul" method="post" action="/multiplication">
+            <h2>Multiplication</h2>
+            <p>Multipliez les nombres :</p>
+            <input type="text" name="nb1" required placeholder="Nombre 1">
+            <input type="text" name="nb2" required placeholder="Nombre 2">
+            <button type="submit">Calculer</button>
 
-                        {{if ne .Erreur3 ""}}
-                        <div class="erreur">{{.Erreur3}}</div>
-                        {{end}}
+            {{if ne .ErreurMul1 ""}}<div class="erreur">{{.ErreurMul1}}</div>{{end}}
+            {{if ne .ErreurMul2 ""}}<div class="erreur">{{.ErreurMul2}}</div>{{end}}
+            {{if .ResMul}}<div class="resultat">{{.EntreeMul1}} X {{.EntreeMul2}} = {{.ResMul}}</div>{{end}}
+        </form>
+    </div>
 
-                        {{if .Resultat3}}
-                        <div class="resultat">{{.Entree3}} °C équivaut à : {{.Resultat3}} °F </div>
-                        {{end}}
-                    </form>
+    <div class="menu">
+        <form class="calcul" method="post" action="/division">
+            <h2>Division</h2>
+            <p>Divisez les nombres :</p>
+            <input type="text" name="nb1" required placeholder="Nombre 1">
+            <input type="text" name="nb2" required placeholder="Nombre 2">
+            <button type="submit">Calculer</button>
+
+            {{if ne .ErreurDiv1 ""}}<div class="erreur">{{.ErreurDiv1}}</div>{{end}}
+            {{if ne .ErreurDiv2 ""}}<div class="erreur">{{.ErreurDiv2}}</div>{{end}}
+            {{if .ResDiv}}<div class="resultat">{{.EntreeDiv1}} / {{.EntreeDiv2}} = {{.ResDiv}}</div>{{end}}
+        </form>
+    </div>
 </body>
 
 </html>
