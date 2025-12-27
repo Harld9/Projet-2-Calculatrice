@@ -8,7 +8,7 @@ import (
 func main() {
 	var menuchoice float64
 	sleep := time.Duration(2) * time.Second
-	var videur string //permet de vider le buffer
+	var videur string //permet de vider le bufer
 	for {
 		clearscreen()
 		fmt.Println("Bonjour et bienvenue dans votre Calculatrice préférée !")
